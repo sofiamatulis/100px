@@ -1,6 +1,5 @@
 <h1 > Latest 100 popular photos from 500px </h1>
 <% @pictures.each do | picture | %>
-      <%= image_tag picture['image_url'] %>
+    <%= image_tag picture['image_url'] %>
       <!--  grabbing each individual picture with URL in the hash retrieved by API -->
- </div>
   <% end %>
