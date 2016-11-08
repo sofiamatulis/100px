@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
    delete '/logout', to: 'sessions#destroy'
 
+   get   '/like/:picture', to: 'photos#like'
+
 
    # when going to http://localhost:3000/auth/500px, bring to sessions create
 

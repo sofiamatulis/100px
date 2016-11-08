@@ -1,12 +1,41 @@
 class PhotosController < ApplicationController
+
+  before_action :current_client
+
   def index
     #this is retrieving the photos with the gem F00px that was configured in the F00px.rb file in the initializer folder
-  client = F00px::Client.new
+  #client = F00px::Client.new
   #retrieving the photos that are popular and number of photos is equal to 100
-  response = client.get('photos?rpp=100&feature=popular')
+  response = @client.get('photos?rpp=100&feature=popular')
   @pictures  = JSON.parse(response.body)['photos']
 
       #retrieving the photos from the response in JSON and saving in a variable pictures that is used in the html file
       #extracting the photos data from the json response , instead of all the information
   end
+
+
+  def like
+    @picture   = params[:picture]
+    # params of the picture is what is inside of the photo (information gotten from the URL)
+    @client.post("photos/#{@picture}/vote?vote=1")
+    redirect_to root_path
+    # https://github.com/500px/api-documentation/blob/master/endpoints/photo/POST_photos_id_vote.md
+    # vote option gotten from here
+
+
+  end
+
+  private
+  def current_client
+    #using F00px gem
+    @client = F00px::Client.new
+    #if the user is logged in, the token from the 500px account is the token for this session (they are the samew)
+    if session[:token_secret] && session[:token]
+    @client.token           = session[:token]
+    @client.token_secret    = session[:token_secret]
+    end
+  end
+
+
+
 end

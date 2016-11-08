@@ -18,3 +18,6 @@ end
 #the method stores all the required data, saves the user, and returns it.
 
 #self to be able to access this in the sessions controller (class method)
+
+# after I get a user info, I have a class method find_by that checks User model for info,
+# if there is , I login, if not create a new user in the database
