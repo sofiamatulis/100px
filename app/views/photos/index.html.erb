@@ -4,8 +4,8 @@
 <!-- this was defined in the photos controller -->
     <%= image_tag picture['image_url'] %>
       <!--  grabbing each individual picture with URL in the hash retrieved by API -->
-      <%= link_to '❤', "/like/#{picture['id']}" %>
-
-
-
+      <!--  only shows like option if you are logged in -->
+      <% if current_user %>
+      <%= link_to 'like', "/like/#{picture['id']}" %>
+      <% end %>
 <% end %>
