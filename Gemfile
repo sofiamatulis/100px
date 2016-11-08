@@ -20,6 +20,7 @@ gem 'f00px'
 gem 'omniauth-500px'
 
 
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

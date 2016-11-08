@@ -9,6 +9,18 @@
   </head>
 
   <body>
+    <% if current_user %>
+    <!--  if current user you give the option to log out -->
+           <ul class="nav navbar-nav pull-right">
+             <li><%= current_user.name %></li>
+             <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+           </ul>
+         <% else %>
+           <ul class="nav navbar-nav">
+             <li><%= link_to 'Log in', '/auth/500px' %></li>
+           </ul>
+         <% end %>
+
     <%= yield %>
   </body>
 </html>

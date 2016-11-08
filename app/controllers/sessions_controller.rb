@@ -1,16 +1,33 @@
 class SessionsController < ApplicationController
+
   def create
-  # session[:token] = auth_hash.token
-  # session[:token_secret] = auth_hash.token_secret
-  # redirect_to root_path
-  # when creating a new session, redirect to local host
+
+  #  from_omniauth is a yet non-existent method that will parse the authentication hash and return the user record.
+  # Next, just save the user’s id inside the sessions and redirect to the main page.
+  begin
+    @user = User.from_omniauth(request.env['omniauth.auth'])
+    session[:user_id] = @user.id
+  rescue
+    flash[:warning] = "There was an error.. Please try again"
+  end
+  redirect_to root_path
+
   end
 
-  # protected
-  # def auth_hash
-  #   request.env['omniauth.auth']['credentials']
-  # end
+  def destroy
+  if current_user
+    session.delete(:user_id)
+    flash[:success] = 'Bye bye!'
+  end
+  redirect_to root_path
+end
 
+
+  protected
+
+  def auth_hash
+    request.env['omniauth.auth']
+  end
 
 end
 
