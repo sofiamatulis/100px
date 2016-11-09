@@ -18,7 +18,7 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'f00px'
 gem 'omniauth-500px'
-
+ gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 # gem 'rails_12factor', group: :production
 
 
