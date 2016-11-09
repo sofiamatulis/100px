@@ -4,7 +4,7 @@
 <div class='photos'>
 <% @pictures.each do | picture | %>
 <!-- this was defined in the photos controller -->
-    <%= image_tag picture['image_url'] %>
+    <%= link_to(image_tag(picture['image_url']), "https://500px.com/photo/#{picture['id']}")  %>
       <!--  grabbing each individual picture with URL in the hash retrieved by API -->
       <!--  only shows like option if you are logged in -->
       <% if current_user %>
