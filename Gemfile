@@ -18,15 +18,13 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'f00px'
 gem 'omniauth-500px'
-gem 'rails_12factor', group: :production
+
+# gem 'rails_12factor', group: :production
 
 
-group :development, :test do
-  gem 'sqlite3'
-end
-group :production do
+# group :production do
   gem 'pg'
-end
+# end
 
 
 # Use jquery as the JavaScript library
@@ -55,6 +53,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'sqlite3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
