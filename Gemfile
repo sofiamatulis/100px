@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'f00px'
 gem 'omniauth-500px'
+gem 'rails_12factor', group: :production
+gem 'sqlite3', group: :development
+gem 'pg', '0.18.1', group: :production
 
 
 
