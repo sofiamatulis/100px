@@ -9,6 +9,4 @@ Rails.application.routes.draw do
   get   '/like/:picture', to: 'photos#like'
 
 
-
-
 end

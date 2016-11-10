@@ -13,6 +13,8 @@ This gem was released by 500px as well.
 Why? This is a strategy to how I can log in through my 500px credentials (without having to create an account at
   this new web app).
 
+3) Figaro
+Why? Figaro helped me handle and configure this application making it easy to deploy to Herokuapp.
 
 500px API docs:
   https://apigee.com/vova/embed/console/api500px
