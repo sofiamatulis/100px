@@ -3,7 +3,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 
 
 
-    provider :fiveHundredPx,ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"]
+    provider :fiveHundredPx,ENV["consumer_key"], ENV["consumer_secret"]
 
 end
 
