@@ -7,10 +7,13 @@ class SessionsController < ApplicationController
     begin
       @user = User.from_omniauth(request.env['omniauth.auth'])
       session[:user_id] = @user.id
+
     rescue
       flash[:warning] = "There was an error.. Please try again"
     end
-    redirect_to root_path
+  redirect_to root_path
+
+
 
   end
 

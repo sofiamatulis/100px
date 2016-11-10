@@ -6,8 +6,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :token
       t.string :secret
-    
-
       t.timestamps
     end
   end

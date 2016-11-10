@@ -11,11 +11,13 @@ class PhotosController < ApplicationController
   #retrieving the photos from the response in JSON and saving in a variable pictures that is used in the html file
   #extracting the photos data from the json response , instead of all the information
 
-
   def like
-    @picture   = params[:picture]
+    @picture      = params[:picture]
+    #@client.post("photos/#{@picture}/vote?vote=1")
     @client.post("photos/#{@picture}/vote?vote=1")
-    redirect_to root_path
+   redirect_to root_path
+
+
   end
 
 
@@ -24,18 +26,47 @@ class PhotosController < ApplicationController
   # https://github.com/500px/api-documentation/blob/master/endpoints/photo/POST_photos_id_vote.md
   # vote docs gotten from here
 
-
-
   private
   def current_client
+    # @client = F00px::Client.new
+    # if current_user
+    #   @user = User.find_by(id: session[:user_id])
+    #   @client.token = @user.token
+    # end
+
     @client = F00px::Client.new
-    if session[:token_secret] && session[:token]
-    @client.token           = session[:token]
-    @client.token_secret    = session[:token_secret]
+    # puts session[:user_id]
+    # if session[:user_id]
+    #   current_user            = User.find(session[:user_id])
+    #   puts current_user
+    #   @client.token           = current_user.token
+    #   puts @client.token
+    #   @client.secret    = current_user.secret
+    #   puts @client.secret
+    puts session[:user_id]
+    if session[:user_id]
+      current_user            = User.find(session[:user_id])
+      puts current_user
+      @client.token           = current_user.token
+      puts @client.token
+      @client.token_secret          = current_user.secret
+      puts @client.token_secret
     end
+
+# @client = F00px::Client.new
+#    #if the user is logged in, the token from the 500px account is the token for this session (they are the samew)
+#  if session[:token_secret] && session[:token]
+#    @client.token           = session[:token]
+#    @client.token_secret    = session[:token_secret]
+#    end
+
   end
+
+
+
   #using F00px gem
   #if the user is logged in, the token from the 500px account is the token for this session (they are the same and I can like it from my 500px account)
+
 
 
 end
