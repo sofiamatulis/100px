@@ -21,6 +21,9 @@ gem 'omniauth-500px'
 gem "figaro"
 gem 'omniauth'
 
+gem 'rspec', '~>3.0'
+gem "rspec-rails"
+
 
 # gem 'rails_12factor', group: :production
 

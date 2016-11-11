@@ -32,10 +32,8 @@ class PhotosController < ApplicationController
   end
 
 
-
   #using F00px gem
   #if the user is logged in, the token from the 500px account is the token for this session (they are the same and I can like it from my 500px account)
-
 
 
 end

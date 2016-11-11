@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def create
-
   #  from_omniauth is a yet non-existent method that will parse the authentication hash and return the user record.
   # Next, just save the user’s id inside the sessions and redirect to the main page.
     begin
@@ -13,10 +12,6 @@ class SessionsController < ApplicationController
       flash[:warning] = "There was an error.. Please try again"
     end
   redirect_to root_path
-
-
-
-
   end
 
   def destroy
@@ -32,7 +27,6 @@ class SessionsController < ApplicationController
   def auth_hash
     request.env['omniauth.auth']
   end
-
 end
 
 # https://github.com/omniauth/omniauth
