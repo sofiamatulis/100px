@@ -1,16 +1,20 @@
-<div class="animation">
-  <div class="circle"></div>'<div class="logo"></div></div>
-<h1 id="main-page-title"> Latest 100 popular photos from 500px </h1>
-<div class='photos'>
-<% @pictures.each do | picture | %>
-<!-- this was defined in the photos controller -->
-    <%= link_to(image_tag(picture['image_url']), "https://500px.com/photo/#{picture['id']}")  %>
-      <!--  grabbing each individual picture with URL in the hash retrieved by API -->
-      <!--  only shows like option if you are logged in -->
-      <% if current_user %>
-      <div class='like'>
-        <button class='like-button'><%= link_to '♥', "/like/#{picture['id']}"%></button>
-      </div>
-      <% end %>
-<% end %>
+<div class="main container">
+  <div class="animation">
+    <div class="circle"></div>'<div class="logo"></div></div>
+  <h1 id="main-page-title"> Latest 100 popular photos from 500px </h1>
+  <div class='photos'>
+  <% @pictures.each do | picture | %>
+  <!-- this was defined in the photos controller -->
+      <%= link_to(image_tag(picture['image_url']), "https://500px.com/photo/#{picture['id']}")  %>
+        <!--  grabbing each individual picture with URL in the hash retrieved by API -->
+        <!--  only shows like option if you are logged in -->
+        <% if current_user %>
+        <div class='like'>
+          <button class='like-button'><%= link_to '♥', "/like/#{picture['id']}"%></button>
+        </div>
+        <% end %>
+  <% end %>
+
+
+  </div>
 </div>
