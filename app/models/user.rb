@@ -12,6 +12,9 @@ end
 
 
 
+
+
+
 #find_or_create_by makes sure that the user is not created many times
 #the method stores all the required data, saves the user, and returns it.
 

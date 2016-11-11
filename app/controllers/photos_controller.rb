@@ -6,18 +6,14 @@ class PhotosController < ApplicationController
     @pictures  = JSON.parse(response.body)['photos']
   end
     #this is retrieving the photos with the gem F00px that was configured in the F00px.rb file in the initializer folder
-  #client = F00px::Client.new
   #retrieving the photos that are popular and number of photos is equal to 100
   #retrieving the photos from the response in JSON and saving in a variable pictures that is used in the html file
   #extracting the photos data from the json response , instead of all the information
 
   def like
     @picture      = params[:picture]
-    #@client.post("photos/#{@picture}/vote?vote=1")
     @client.post("photos/#{@picture}/vote?vote=1")
    redirect_to root_path
-
-
   end
 
 
@@ -28,38 +24,11 @@ class PhotosController < ApplicationController
 
   private
   def current_client
-    # @client = F00px::Client.new
-    # if current_user
-    #   @user = User.find_by(id: session[:user_id])
-    #   @client.token = @user.token
-    # end
-
     @client = F00px::Client.new
-    # puts session[:user_id]
-    # if session[:user_id]
-    #   current_user            = User.find(session[:user_id])
-    #   puts current_user
-    #   @client.token           = current_user.token
-    #   puts @client.token
-    #   @client.secret    = current_user.secret
-    #   puts @client.secret
-    puts session[:user_id]
-    if session[:user_id]
-      current_user            = User.find(session[:user_id])
-      puts current_user
-      @client.token           = current_user.token
-      puts @client.token
-      @client.token_secret          = current_user.secret
-      puts @client.token_secret
+    if session[:token_secret] && session[:token]
+      @client.token           = session[:token]
+      @client.token_secret    = session[:token_secret]
     end
-
-# @client = F00px::Client.new
-#    #if the user is logged in, the token from the 500px account is the token for this session (they are the samew)
-#  if session[:token_secret] && session[:token]
-#    @client.token           = session[:token]
-#    @client.token_secret    = session[:token_secret]
-#    end
-
   end
 
 
