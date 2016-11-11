@@ -11,16 +11,22 @@
   <body>
     <% if current_user %>
     <!--  if current user you give the option to log out -->
-           <ul class="nav navbar-nav pull-right">
+           <ul class="nav-bar-log-out">
              <li id="user-name">Welcome, <%=  current_user.name %>!</li> <br>
-             <li id="log-out"><%= link_to 'Log Out', logout_path, method: :delete %></li>
+             <%= link_to 'Log Out', logout_path, method: :delete, id:"log-out" %>
+             <%= link_to'Editors', 'https://500px.com/editors', id: "editors" %>
+             <%= link_to'Upcoming', 'https://500px.com/upcoming', id:"upcoming" %>
+             <%= link_to'Fresh', 'https://500px.com/fresh', id: "fresh" %>
+             <%= link_to'Marketplace', 'https://500px.com/marketplace', id: "marketplace" %>
            </ul>
          <% else %>
-           <ul class="nav navbar-nav">
+           <ul class="nav-bar-log-in">
              <li id="log-in-sign">Please log in to like a photo!</li>
-             <!-- <li id="log-in"> -->
                <%= link_to 'Log in', '/auth/500px', id: "log-in" %>
-             <!-- </li> -->
+               <%= link_to'Editors', 'https://500px.com/editors', id: "editors" %>
+               <%= link_to'Upcoming', 'https://500px.com/upcoming', id:"upcoming" %>
+               <%= link_to'Fresh', 'https://500px.com/fresh', id: "fresh" %>
+               <%= link_to'Marketplace', 'https://500px.com/marketplace', id: "marketplace" %>
            </ul>
          <% end %>
 

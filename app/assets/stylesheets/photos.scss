@@ -67,7 +67,7 @@ a {
   perspective-origin: 20% 50%;
   transition: 0.5s all;
   opacity: 1;
-  right: 7%;
+  right: 10%;
   position: relative;
 }
 
@@ -109,4 +109,27 @@ a {
   to {
     transform: rotateY(360deg);
   }
+}
+
+
+#editors, #upcoming, #fresh, #marketplace {
+  display: inline;
+  position:relative;
+}
+
+#editors {
+  right:15%;
+}
+
+#fresh {
+  left:10%;
+}
+
+#marketplace {
+  left:20%;
+}
+
+#upcoming {
+  right:3%;
+
 }

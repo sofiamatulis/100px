@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #user-name {
   font-family: 'Open Sans', sans-serif;
-  top: 100px;
+  top: 150px;
   position: relative;
-  left: 4%;
+  left: 5%;
 
 }
 
@@ -17,12 +17,8 @@
 
 }
 
-#log-out {
-  float:left;
-}
 
-
-#log-in {
+#log-out,#log-in, #editors, #upcoming, #fresh, #marketplace {
 	line-height: 50px;
 	height: 50px;
 	text-align: center;
@@ -31,11 +27,15 @@
 	transition: all 0.3s;
 	position: relative;
   font-family: 'Open Sans', sans-serif;
-  right:40%;
 
 }
 
-#log-in:before {
+#log-in, #log-out {
+  right:30%;
+
+}
+
+#log-out:before, #log-in:before, #editors:before, #upcoming:before, #fresh:before, #marketplace:before {
   //adding this before the log-in button
 	content: '';
 	position: absolute;
@@ -50,12 +50,12 @@
 	border-bottom-width: 1px;
 	border-top-style: solid;
 	border-bottom-style: solid;
-	border-top-color: lightpink;
-	border-bottom-color: lightpink;
+	border-top-color: #0088cf;
+	border-bottom-color: #0088cf;
 	transform: scale(0.1, 1);
 }
 
-#log-in:hover:before {
+#log-out:hover:before, #log-in:hover:before, #editors:hover:before, #upcoming:hover:before, #fresh:hover:before, #marketplace:hover:before {
 	opacity: 1;
 	transform: scale(3, 3);
 }
