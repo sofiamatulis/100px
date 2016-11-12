@@ -10,11 +10,19 @@ class PhotosController < ApplicationController
   #retrieving the photos from the response in JSON and saving in a variable pictures that is used in the html file
   #extracting the photos data from the json response , instead of all the information
 
+
+  def fresh
+    response = @client.get('photos?rpp=100&feature=fresh')
+    @pictures  = JSON.parse(response.body)['photos']
+    render :index
+  end
+
   def like
     @picture      = params[:picture]
     @client.post("photos/#{@picture}/vote?vote=1")
    redirect_to root_path
   end
+
 
 
   # params of the picture is what is inside of the photo (information gotten from the URL)

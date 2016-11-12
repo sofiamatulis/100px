@@ -8,4 +8,10 @@ Rails.application.routes.draw do
 
   get   '/like/:picture', to: 'photos#like'
 
+  get '/fresh', to: 'photos#fresh'
+
+
+
+
+
 end

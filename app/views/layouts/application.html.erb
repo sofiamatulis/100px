@@ -16,7 +16,9 @@
              <%= link_to 'Log Out', logout_path, method: :delete, id:"log-out" %>
              <%= link_to'Editors', 'https://500px.com/editors', id: "editors" %>
              <%= link_to'Upcoming', 'https://500px.com/upcoming', id:"upcoming" %>
-             <%= link_to'Fresh', 'https://500px.com/fresh', id: "fresh" %>
+             <%#= link_to'Fresh', 'https://500px.com/fresh', id: "fresh" %>
+             <%= link_to'Fresh', '/fresh', id: "fresh" %>
+
              <%= link_to'Marketplace', 'https://500px.com/marketplace', id: "marketplace" %>
            </ul>
          <% else %>
@@ -25,8 +27,11 @@
                <%= link_to 'Log in', '/auth/500px', id: "log-in" %>
                <%= link_to'Editors', 'https://500px.com/editors', id: "editors" %>
                <%= link_to'Upcoming', 'https://500px.com/upcoming', id:"upcoming" %>
-               <%= link_to'Fresh', 'https://500px.com/fresh', id: "fresh" %>
+               <%#= link_to'Fresh', 'https://500px.com/fresh', id: "fresh" %>
+               <%= link_to'Fresh', '/fresh', id: "fresh" %>
+
                <%= link_to'Marketplace', 'https://500px.com/marketplace', id: "marketplace" %>
+
            </ul>
          <% end %>
 
