@@ -9,4 +9,12 @@ RSpec.describe PhotosController do
     end
   end
 
+
+  describe "photos is liking " do
+    it "should be successful with like working" do
+      post :index, method: :like, params: {id: '123456'}
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
