@@ -10,6 +10,13 @@ Rails.application.routes.draw do
 
   get '/fresh', to: 'photos#fresh'
 
+  get '/editors', to: 'photos#editors'
+
+  get '/upcoming', to: 'photos#upcoming'
+
+
+
+
 
 
 

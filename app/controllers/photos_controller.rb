@@ -17,6 +17,19 @@ class PhotosController < ApplicationController
     render :index
   end
 
+  def editors
+    response = @client.get('photos?rpp=100&feature=editors')
+    @pictures  = JSON.parse(response.body)['photos']
+    render :index
+  end
+
+  def upcoming
+    response = @client.get('photos?rpp=100&feature=upcoming')
+    @pictures  = JSON.parse(response.body)['photos']
+    render :index
+  end
+
+
   def like
     @picture      = params[:picture]
     @client.post("photos/#{@picture}/vote?vote=1")

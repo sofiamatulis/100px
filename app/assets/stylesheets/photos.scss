@@ -112,24 +112,20 @@ a {
 }
 
 
-#editors, #upcoming, #fresh, #marketplace {
+#editors, #upcoming, #fresh, #popular {
   display: inline;
   position:relative;
 }
 
 #editors {
-  right:15%;
+  right:11%;
 }
 
 #fresh {
-  left:10%;
+  left:11%;
 }
 
-#marketplace {
-  left:20%;
-}
 
-#upcoming {
-  right:3%;
-
+#popular {
+  right:25%;
 }

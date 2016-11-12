@@ -19,7 +19,7 @@
 }
 
 
-#log-out,#log-in, #editors, #upcoming, #fresh, #marketplace {
+#log-out,#log-in, #editors, #upcoming, #fresh, #marketplace, #popular {
 	line-height: 50px;
 	height: 50px;
 	text-align: center;
@@ -32,11 +32,11 @@
 }
 
 #log-in, #log-out {
-  right:30%;
+  right:35%;
 
 }
 
-#log-out:before, #log-in:before, #editors:before, #upcoming:before, #fresh:before, #marketplace:before {
+#log-out:before, #log-in:before, #editors:before, #upcoming:before, #fresh:before, #popular:before {
   //adding this before the log-in button
 	content: '';
 	position: absolute;
@@ -56,7 +56,7 @@
 	transform: scale(0.1, 1);
 }
 
-#log-out:hover:before, #log-in:hover:before, #editors:hover:before, #upcoming:hover:before, #fresh:hover:before, #marketplace:hover:before {
+#log-out:hover:before, #popular:hover:before, #log-in:hover:before, #editors:hover:before, #upcoming:hover:before, #fresh:hover:before {
 	opacity: 1;
 	transform: scale(3, 3);
 }
