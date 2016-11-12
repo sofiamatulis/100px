@@ -22,10 +22,21 @@ RSpec.describe SessionsController do
       describe 'GET #create' do
       it "requires login" do
       get :create, params: {provider: '500px'}
-      #redirecting to 500px log-in 
+      #redirecting to 500px log-in
       expect(response).to have_http_status(302)
       end
     end
   end
+
+  describe "guest access" do
+      describe 'GET #destroy' do
+      it "log out from app" do
+      get :destroy, params: {provider: '500px'}
+      #redirecting to 500px log-out
+      expect(response).to have_http_status(302)
+      end
+    end
+  end
+
 
 end
