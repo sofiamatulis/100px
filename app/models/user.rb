@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  validates :token, :secret, :uid, :provider, presence: true
+
     def self.from_omniauth(auth_hash)
      user = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
      user.name = auth_hash['info']['name']
