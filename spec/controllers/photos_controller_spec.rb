@@ -38,4 +38,13 @@ RSpec.describe PhotosController do
     end
   end
 
+#testing if it finds title from index page
+  render_views
+  describe "GET index" do
+    it "has a photos related heading" do
+      get :index
+      expect(response.body).to match /<h1 id="main-page-title"> Latest 100 photos from 500px/
+    end
+  end
+
 end
