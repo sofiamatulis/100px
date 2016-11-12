@@ -17,4 +17,25 @@ RSpec.describe PhotosController do
     end
   end
 
+  describe "fresh is here" do
+    it "should be successful with index showing" do
+      get :fresh
+      expect(response).to be_success
+    end
+  end
+
+  describe "upcoming is here" do
+    it "should be successful with index showing" do
+      get :upcoming
+      expect(response).to be_success
+    end
+  end
+
+  describe "editors is here" do
+    it "should be successful with index showing" do
+      get :editors
+      expect(response).to be_success
+    end
+  end
+
 end
