@@ -18,8 +18,8 @@
 
 }
 
-
-#log-out,#log-in, #editors, #upcoming, #fresh, #marketplace, #popular {
+// hover animation 
+#log-out,#log-in, #editors, #upcoming, #fresh, #popular, #popular-logged-in, #upcoming-logged-in, #fresh-logged-in, #editors-logged-in {
 	line-height: 50px;
 	height: 50px;
 	text-align: center;
@@ -31,12 +31,17 @@
 
 }
 
-#log-in, #log-out {
+#log-in{
   right:35%;
 
 }
 
-#log-out:before, #log-in:before, #editors:before, #upcoming:before, #fresh:before, #popular:before {
+#log-out {
+  right:25%;
+}
+
+
+#log-out:before, #log-in:before, #editors:before, #upcoming:before, #fresh:before, #popular:before, #popular-logged-in:before, #upcoming-logged-in:before, #fresh-logged-in:before, #editors-logged-in:before {
   //adding this before the log-in button
 	content: '';
 	position: absolute;
@@ -56,7 +61,7 @@
 	transform: scale(0.1, 1);
 }
 
-#log-out:hover:before, #popular:hover:before, #log-in:hover:before, #editors:hover:before, #upcoming:hover:before, #fresh:hover:before {
+#log-out:hover:before, #popular:hover:before, #log-in:hover:before, #editors:hover:before, #upcoming:hover:before, #fresh:hover:before, #popular-logged-in:hover:before, #upcoming-logged-in:hover:before, #fresh-logged-in:hover:before, #editors-logged-in:hover:before {
 	opacity: 1;
 	transform: scale(3, 3);
 }

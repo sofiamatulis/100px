@@ -12,14 +12,15 @@
     <% if current_user %>
     <!--  if current user you give the option to log out -->
            <ul class="nav-bar-log-out">
-             <li id="user-name">Welcome, <%=  current_user.name %>!</li> <br>
+             <li id="user-name">Welcome, <%=  current_user.name %>!</li>
              <%= link_to 'Log Out', logout_path, method: :delete, id:"log-out" %>
-             <%= link_to'Popular', '/', id: "popular" %>
-             <%= link_to'Editors', '/editors', id: "editors" %>
-             <%= link_to'Upcoming', '/upcoming', id:"upcoming" %>
-             <%= link_to'Fresh', '/fresh', id: "fresh" %>
+             <%= link_to'Popular', '/', id: "popular-logged-in" %>
+             <%= link_to'Editors', '/editors', id: "editors-logged-in" %>
+             <%= link_to'Upcoming', '/upcoming', id:"upcoming-logged-in" %>
+             <%= link_to'Fresh', '/fresh', id: "fresh-logged-in" %>
            </ul>
          <% else %>
+         <!--  if user is not logged in, log in button will appear -->
            <ul class="nav-bar-log-in">
              <li id="log-in-sign">Please log in to like a photo!</li>
                <%= link_to 'Log in', '/auth/500px', id: "log-in" %>

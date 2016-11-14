@@ -9,6 +9,7 @@
         <!--  grabbing each individual picture with URL in the hash retrieved by API -->
         <!--  only shows like option if you are logged in -->
         <% if current_user %>
+        <!--  like button will only appear if the user is logged in-->
         <div class='like'>
           <button class='like-button'><%= link_to '♥', "/like/#{picture['id']}"%></button>
         </div>

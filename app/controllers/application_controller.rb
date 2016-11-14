@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
-#how we know if the user is logged in or out!
+#how we know if the user is logged in or out! defining a current user 
 
 end

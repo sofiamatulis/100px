@@ -11,6 +11,8 @@ class PhotosController < ApplicationController
   #extracting the photos data from the json response , instead of all the information
 
 
+# here I am doing the same for other categories: fresh, editors, upcoming
+
   def fresh
     response = @client.get('photos?rpp=100&feature=fresh')
     @pictures  = JSON.parse(response.body)['photos']
@@ -29,15 +31,12 @@ class PhotosController < ApplicationController
     render :index
   end
 
-
+# To post like I am posting a vote in the picture (syntax gotten from 500px API docs)
   def like
     @picture      = params[:picture]
     @client.post("photos/#{@picture}/vote?vote=1")
    redirect_to root_path
   end
-
-
-
   # params of the picture is what is inside of the photo (information gotten from the URL)
   #post a vote (like) in the picture
   # https://github.com/500px/api-documentation/blob/master/endpoints/photo/POST_photos_id_vote.md
@@ -52,9 +51,12 @@ class PhotosController < ApplicationController
     end
   end
 
-
   #using F00px gem
   #if the user is logged in, the token from the 500px account is the token for this session (they are the same and I can like it from my 500px account)
+  #saving the token in here
+
+#  I decided to store the token by creating a user model and saving it in the session because this would help the app grow (for instance in the future to be able to post likes)
+
 
 
 end

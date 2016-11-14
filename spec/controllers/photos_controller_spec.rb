@@ -2,18 +2,13 @@ require 'rails_helper'
 
 RSpec.describe PhotosController do
 
+
+#testing if all pages are working!
+
   describe "index is here" do
     it "should be successful with index showing" do
       get :index
       expect(response).to be_success
-    end
-  end
-
-
-  describe "photos is liking " do
-    it "should be successful with like working" do
-      post :index, method: :like, params: {id: '123456'}
-      expect(response).to have_http_status(200)
     end
   end
 
@@ -44,6 +39,14 @@ RSpec.describe PhotosController do
     it "has a photos related heading" do
       get :index
       expect(response.body).to match /<h1 id="main-page-title"> Latest 100 photos from 500px/
+    end
+  end
+
+  #testing if photo is being liked (200 response)
+  describe "photos is liking " do
+    it "should be successful with like working" do
+      post :index, method: :like, params: {id: '123456'}
+      expect(response).to have_http_status(200)
     end
   end
 
