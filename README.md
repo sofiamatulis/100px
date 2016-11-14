@@ -2,14 +2,13 @@
 
  Gems that were used:
 
-* 1) F00px: F00px is a ruby API gem that helps and simplifies the process with methods to pull the 500px latest 100 photos into the web app.
+* 1) F00px: F00px is a ruby API gem that helps and simplifies the process to pull the 500px latest 100 photos into the web app.
 
 
-* 2) Omniauth-500px: Omniauth handles the authentication process since it lets the user log in with their 500px credentials and gives the app a token back, and with that token can act in behalf of that user. This token is used by the app to perform  actions on the user’s behalf (for example, to like a photo).
+* 2) Omniauth-500px: Omniauth handles the authentication process since it lets the user log in with their 500px credentials and releases an access token that is issued to the application. This token is used by the app to perform  actions on the user’s behalf (for example, to like a photo).
 
 
 * 3) Figaro: Figaro makes it easier to configure the application in a secure method.
-
 
 
 500px API docs: <br>
